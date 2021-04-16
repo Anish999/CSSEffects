@@ -1,0 +1,149 @@
+<head>
+  <title>Accordion: HTML & CSS</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --blue: #3498db;
+      --dark-blue: #2980b9;
+      --background: #081118;
+      --grey: #3b3b3b;
+      --light-grey: #ccc;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--background);
+    }
+
+    .menu{
+      width: 20rem;
+      border-radius: 0.2rem;
+      overflow: hidden;
+    }
+
+    .menu a {
+      text-decoration: none;
+    }
+
+    .menu_item {
+      list-style: none;
+      border-top: 1px solid var(--dark-blue);
+      overflow: hidden;
+    }
+
+    .btn {
+      display: block;
+      padding: 1rem 1.2rem;
+      background: var(--blue);
+      color: white;
+      position: relative;
+    }
+
+    .btn::before{
+      content: '';
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      background: var(--blue);
+      left: 1.5rem;
+      bottom: -0.5rem;
+      transform: rotate(45deg);
+    }
+
+    .btn i {
+      margin-right: 1rem;
+    }
+
+    .menu_item__sub {
+      background: var(--grey);
+      overflow: hidden;
+      transition: max-height 0.3s;
+      max-height: 0;
+    }
+
+    .menu_item__sub a {
+      display: block;
+      padding: 1rem 1.6rem;
+      color: white;
+      font-size: 0.9rem;
+      position: relative;
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    .menu_item__sub a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0.4rem;
+      height: 100%;
+      background: var(--blue);
+      transform: translateX(-0.4rem);
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+    .menu_item__sub a:hover::before{
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .menu_item:target .menu_item__sub{
+      max-height: 10rem;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="menu">
+    <li class="menu_item" id="profile">
+      <a href="#profile" class="btn"> 
+        <i class="fas fa-user"></i> 
+        Profile
+      </a>
+      <div class="menu_item__sub">
+        <a href="#">Posts</a>
+        <a href="#">Picture</a>
+      </div>
+    </li>
+    <li class="menu_item" id="messages">
+      <a href="#messages" class="btn"> 
+        <i class="fas fa-envelope"></i> 
+        Messages
+      </a>
+      <div class="menu_item__sub">
+        <a href="#">New</a>
+        <a href="#">Sent</a>
+        <a href="#">Spam</a>
+      </div>
+    </li>
+    <li class="menu_item" id="settings">
+      <a href="#settings" class="btn"> 
+        <i class="fas fa-cog"></i> 
+        Settings
+      </a>
+      <div class="menu_item__sub">
+        <a href="#">Password</a>
+        <a href="#">Language</a>
+      </div>
+    </li>
+    <li class="menu_item">
+      <a href="#" class="btn"> 
+        <i class="fas fa-sign-out-alt"></i> 
+        Logout
+      </a>
+
+    </li>
+  </div>
+</body>
