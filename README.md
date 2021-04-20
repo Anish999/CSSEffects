@@ -12,3 +12,7 @@
 
 ****
 
+### View the __GLITCH__ in browser _[here](https://htmlpreview.github.io/?https://github.com/Anish999/CSSEffects/blob/main/glitch.html)_.
+
+****
+
