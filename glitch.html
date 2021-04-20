@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #222;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-family: sans-serif;
+        }
+        .glitch {
+            font-size: 6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: relative;
+
+            text-shadow: 
+                0.05em 0 0 rgba(254,39,254,1),
+                -0.025em -0.05em 0 rgba(5,232,255,1),
+                0.025em 0.05em 0 rgba(1,217,26,1);
+
+            animation: glitch 500ms infinite;
+        }
+
+        .glitch span {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .glitch span:first-child {
+            animation: glitch 650ms infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-0.025em, -0.0125em);
+            opacity: .8;
+        }
+        .glitch span:last-child {
+            animation: glitch 375ms infinite;
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            transform: translate(0.0125em, 0.025em);
+            opacity: .8;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 
+                0.05em 0 0 rgba(254,39,254,1),
+                -0.025em -0.05em 0 rgba(5,232,255,1),
+                0.025em 0.05em 0 rgba(1,217,26,1);
+            }
+            14% {
+                text-shadow: 
+                0.05em 0 0 rgba(254,39,254,1),
+                -0.025em -0.05em 0 rgba(5,232,255,1),
+                0.025em 0.05em 0 rgba(1,217,26,1);
+            }
+            15% {
+                text-shadow: 
+                -0.05em -0.025em 0 rgba(254,39,254,1),
+                0.025em 0.025em 0 rgba(5,232,255,1),
+                -0.05em -0.05em 0 rgba(1,217,26,1);
+            }
+            49% {
+                text-shadow: 
+                -0.05em -0.025em 0 rgba(254,39,254,1),
+                0.025em 0.025em 0 rgba(5,232,255,1),
+                -0.05em -0.05em 0 rgba(1,217,26,1);
+            }
+            50% {
+                text-shadow: 
+                0.025em 0.05em 0 rgba(254,39,254,1),
+                0.05em 0 0 rgba(5,232,255,1),
+                0 -0.05em 0 rgba(1,217,26,1);
+            }
+            99% {
+                text-shadow: 
+                0.025em 0.05em 0 rgba(254,39,254,1),
+                0.05em 0 0 rgba(5,232,255,1),
+                0 -0.05em 0 rgba(1,217,26,1);
+            }
+            100% {
+                text-shadow: 
+                -0.025em 0 0 rgba(254,39,254,1),
+                -0.025em -0.025em 0 rgba(5,232,255,1),
+                -0.025em -0.05em 0 rgba(1,217,26,1);
+            }
+        }
+
+        /* This is for the users who have turned off the animations  */
+        @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-delay: -1ms !important;
+            animation-duration: 1ms !important;
+            animation-iteration-count: 1 !important;
+            background-attachment: initial !important;
+            scroll-behavior: auto !important;
+            transition-duration: 0s !important;
+            transition-delay: 0s !important;
+        }
+        }
+    </style>
+</head>
+<body>
+    <p class="glitch">
+        <span aria-hidden="true"> fernweh </span>
+        fernweh 
+        <span aria-hidden="true"> fernweh </span>
+    </p>
+    
+</body>
+</html>
