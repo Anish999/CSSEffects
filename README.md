@@ -16,3 +16,9 @@
 
 ****
 
+### View the __MOVING-CAR-ANIMATION__ in browser _[here](https://htmlpreview.github.io/?https://github.com/Anish999/CSSEffects/blob/main/Moving-car.html)_.
+
+****
+
+
+
