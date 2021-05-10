@@ -20,5 +20,9 @@
 
 ****
 
+### View the __3D-WAVE-LOADER__ in browser _[here](https://htmlpreview.github.io/?https://github.com/Anish999/CSSEffects/blob/main/Loader.html)_.
+
+****
+
 
 
